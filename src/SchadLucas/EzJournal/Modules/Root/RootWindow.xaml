@@ -1,0 +1,31 @@
+﻿<Window x:Class="SchadLucas.EzJournal.Modules.Root.RootWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sections="clr-namespace:SchadLucas.Wpf.EzMvvm.Sections;assembly=SchadLucas.Wpf.EzMvvm"
+        MinWidth="800" MinHeight="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" MinWidth="150" MaxWidth="350"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <sections:Section Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" SectionName="REGION_A" />  <!--TOP-->
+        <GridSplitter Grid.Row="1" Grid.Column="1" 
+                      Margin="0" Padding="0" FocusVisualStyle="{x:Null}"
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch"
+                      Background="DarkGray"
+                      ShowsPreview="False"/>
+        <sections:Section Grid.Row="1" Grid.Column="0" SectionName="REGION_B" />                      <!--LEFT-->
+        <sections:Section Grid.Row="1" Grid.Column="2" SectionName="REGION_C" />                      <!--CENTER-->
+        <sections:Section Grid.Row="1" Grid.Column="3" SectionName="REGION_D" />                      <!--RIGHT-->
+        <sections:Section Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" SectionName="REGION_E" />  <!--BOTTOM-->
+    </Grid>
+</Window>
